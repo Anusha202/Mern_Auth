@@ -1,5 +1,5 @@
 import { PASSWORD_RESET_REQUEST_TEMPLATE, VERIFICATION_EMAIL_TEMPLATE } from "./emailTemplates.js"
-import { mailtrapClient } from "./mailtrap.config.js"
+import { mailtrapClient, sender } from "./mailtrap.config.js"
 export const sendVerificationEmail=async(email,verificationToken)=>{
     const recipient=[{email}]
 
@@ -29,11 +29,9 @@ export const sendWelcomeEmail=async(email,name)=>{
       const response =  await mailtrapClient.send({
             from:sender,
             to:recipient,
-            template_uuid:"57404f6e-cb4f-4614-b4ff-7efc11f1189d",
+            template_uuid:"627dfde3-c7cd-4a2c-9260-2942e15171da",
             template_variables:{
-                company_info_name: "Auth Company",
-                name: name,
-
+                
 
             },
 
